@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Carlos Martinez <itscarlosisaac@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "webpack-dev-server"
+  },
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
