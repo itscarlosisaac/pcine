@@ -8,6 +8,7 @@ class Navigation extends Component {
                 <nav>
                     <ul>
                         <li><NavLink to="/">Home</NavLink></li>
+                        <li><NavLink to="/cines">Cines</NavLink></li>
                         <li><NavLink to="/contact">Contact</NavLink></li>
                     </ul>
                 </nav>

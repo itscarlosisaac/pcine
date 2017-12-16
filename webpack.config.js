@@ -58,6 +58,7 @@ module.exports = (env) => {
         devtool: isProduction ? 'source-map' : 'inline-source-map',
 
         devServer: {
+            host: '0.0.0.0',
             headers: {
                 'Access-Control-Allow-Origin': '*'
             },

@@ -9,7 +9,7 @@ import Footer from '../components/Footer'
 import HomePage from '../components/pages/HomePage'
 import ContactPage from '../components/pages/ContactPage'
 import NotFoundPage from '../components/pages/NotFoundPage'
-
+import TheathersPage from '../components/pages/TheathersPage'
 // App Router
 const AppRouter = () => (
     <BrowserRouter>
@@ -19,6 +19,7 @@ const AppRouter = () => (
                 <Switch>
                     <Route exact={true} path="/" component={HomePage} />
                     <Route path='/contact' component={ContactPage} />
+                    <Route path='/cines' component={TheathersPage} />
                     <Route component={NotFoundPage} />
                 </Switch>
             </div>
