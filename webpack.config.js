@@ -1,6 +1,6 @@
+// Requires
 const webpack = require('webpack')
 const path = require('path')
-
 
 // Application Variables
 const appName = 'app'
@@ -9,9 +9,16 @@ const exportPath = path.resolve(__dirname, './dist')
 const srcDir = path.resolve(__dirname, 'src')
 const distDir = path.resolve(__dirname, 'dist')
 
+// Plugins
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 // Application Plugins
-const plugins = [];
+const Plugins = [
+    new ExtractTextPlugin({
+        filename: 'styles.css',
+        allChunks: true
+    })
+];
 
 module.exports = (env) => {
     const isProduction = env === 'production'
@@ -28,23 +35,26 @@ module.exports = (env) => {
                 exclude: /node_modules/
             }, {
                 test: /\.s?css$/,
-                use: [{
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true,
-                            modules: true
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [{
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: true,
+                                modules: true
+                            }
+                        },
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: true
+                            }
                         }
-                    },
-                    {
-                        loader:'sass-loader',
-                        options: {
-                            sourceMap: true
-                        }
-                    }
-                ]
+                    ]
+                })
             }]
         },
-        plugins: plugins,
+        plugins: Plugins,
         devtool: isProduction ? 'source-map' : 'inline-source-map',
 
         devServer: {
