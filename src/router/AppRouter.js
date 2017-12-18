@@ -6,6 +6,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import MovieList from '../components/MovieList'
 import Hero from '../components/Hero'
+import Sidebar from '../components/Sidebar'
 
 // Importing Page Components
 import HomePage from '../components/pages/HomePage'
@@ -21,6 +22,7 @@ const AppRouter = () => (
             <Hero />
             <div className="app__main__content">
                 <MovieList />
+                <Sidebar />
             </div>
             <div>
                 <Switch>
