@@ -5,11 +5,28 @@ import api from '../utils/api'
 
 
 class MovieList extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            movieData: []
+        }
+    }
+    componentDidMount(){
+        api.fetchMovies().then( (movieData) => { 
+            console.log(movieData)
+            this.setState( (prev, next) => ({
+                movieData
+            }))
+        });
+    }
     render () {
-        console.log( api.fetchMovies().then((data) => {console.log(data) } )  )
         return (
             <div>
-                <Movie />
+            {
+                this.state.movieData.map( (data) => {
+                    return <Movie key={data.tmdb_id} data={data} />
+                })
+            }
             </div>
         )
     }
