@@ -4,11 +4,11 @@
 /* Fonts
    ========================================================================== */
 
-//  Importing fonts.
+//  Importing fonts from google.
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i');
 
+// Fonts variables
 $base-font: 'Roboto', Helvetica, Arial, sans-serif;
-
 
 html,
 .root {
@@ -81,12 +81,6 @@ ol ul {
 
 
 /* Let's make sure all's aligned */
-
-hr,
-.hr {
-    border: 1px solid;
-    margin: -1px 0;
-}
 
 a,
 b,
