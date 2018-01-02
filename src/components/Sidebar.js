@@ -6,7 +6,6 @@ class Sidebar extends Component {
         return (
             <div>
                 <h1>Sidebar</h1>
-                <Search />
             </div>
         )
     }
