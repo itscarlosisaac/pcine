@@ -10,5 +10,8 @@ module.exports = {
             .catch((e) => {
                 console.log(`Something went wrong ${e}`)
             })
+    },
+    filterMovies: function(searchText, movieArray){
+        return movieArray.filter( (item) => item.title.toLowerCase().includes(searchText.toLowerCase()) );
     }
 }
