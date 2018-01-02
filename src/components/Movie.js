@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
 const movie__genre = {
-    'list-style': 'none',
+    'listStyle': 'none',
     'display': 'inline-block',
-    'margin-right': '5px'
+    'marginRight': '5px'
 }
 
 const movie__genres = {
