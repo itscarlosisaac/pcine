@@ -19,11 +19,6 @@ const AppRouter = () => (
     <BrowserRouter>
         <div>
             <Header />
-            <Hero />
-            <div className="app__main__content">
-                <MovieList />
-                <Sidebar />
-            </div>
             <div>
                 <Switch>
                     <Route exact={true} path="/" component={HomePage} />
